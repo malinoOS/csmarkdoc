@@ -5,11 +5,11 @@ It currently does not support features in XML comments like `<see>`. But that wi
 
 [See what it can do](https://github.com/malinoOS/malino/wiki/libmalino-(C%23))
 
-# Limitations
+## Limitations
 - You must only have ONE namespace defined in the entire file list.
 - It doesn't quite understand the concept of enums and structs yet.
 
-# Usage
+## Usage
 
 ```
 csmarkdoc <files>
