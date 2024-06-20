@@ -11,6 +11,8 @@ It currently does not support features in XML comments like `<see>`. But that wi
 
 ## Usage
 
+`csmarkdoc` outputs markdown through stdout. You can pass this to a file by adding ` > file.md` to the end of a command, for example, `csmarkdoc file.cs > file.md`.
+
 ```
 csmarkdoc <files>
 ```
