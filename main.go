@@ -23,8 +23,8 @@ func main() {
 			if err != nil {
 				fmt.Println("FAILED reading " + expandPath(str))
 			}
-			// remove indentation
-			buf = strings.ReplaceAll(strings.ReplaceAll(string(dat), "\t", ""), "    ", "")
+			// remove indentation & replace CRLF with LF
+			buf = strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(string(dat), "\r\n", "\n"), "\t", ""), "    ", "")
 			lines := strings.Split(buf, "\n")
 			for _, line := range lines {
 				if strings.HasPrefix(line, "namespace") && !namespaceFound {
@@ -40,9 +40,21 @@ func main() {
 						// ```cs
 						// public class Class
 						// ```
-						// ## Class
+						// ## Class `Class`
 						// ---
-						parseInp += "```cs\n" + strings.ReplaceAll(strings.ReplaceAll(line, ";", ""), "{", "") + "\n```\n## " + strings.Split(line, " ")[2] + "\n---\n"
+
+						parseInp += "```cs\n" + strings.ReplaceAll(line, "{", "") + "\n```\n## Class `" + strings.Split(line, " ")[2] + "`\n---\n"
+					} else if strings.Contains(line, "struct") {
+						// If it's a struct,
+						// then print like this:
+						//
+						// ```cs
+						// public struct Struct
+						// ```
+						// ## Struct `Struct`
+						// ---
+
+						parseInp += "```cs\n" + strings.ReplaceAll(line, "{", "") + "\n```\n## Struct `" + strings.Split(line, " ")[2] + "`\n---\n"
 					} else {
 						// Otherwise,
 						// then print like this:

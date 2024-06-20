@@ -7,7 +7,7 @@ It currently does not support features in XML comments like `<see>`. But that wi
 
 ## Limitations
 - You must only have ONE namespace defined in the entire file list.
-- It doesn't quite understand the concept of enums and structs yet.
+- It doesn't quite understand the concept of enums yet.
 
 ## Usage
 
