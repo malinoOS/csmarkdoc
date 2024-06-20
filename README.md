@@ -1,5 +1,8 @@
 # csmarkdoc
-Generate markdown documentation for C# code. This tool parses your code and looks for XML comments.
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/malinoOS/csmarkdoc?style=for-the-badge&logo=files)
+
+
+A very tiny markdown documentation generator for C# code. This tool parses your code and looks for XML comments.
 
 It currently does not support features in XML comments like `<see>`. But that will be added down the road.
 
