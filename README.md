@@ -11,6 +11,8 @@ It currently does not support features in XML comments like `<see>`. But that wi
 
 ## Usage
 
+To use it properly (You can use `csmarkdoc` without adding comments, but it's not recommended), you have to put XML comments in your code, like the `///` ones, find information about them [here.](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/)
+
 `csmarkdoc` outputs markdown through stdout. You can pass this to a file by adding ` > file.md` to the end of a command, for example, `csmarkdoc file.cs > file.md`.
 
 ```
